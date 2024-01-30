@@ -54,7 +54,7 @@ public class WebServer {
     }
 
     private void handleTaskRequest(HttpExchange exchange) throws IOException {
-        if (!exchange.getRequestMethod().equalsIgnoreCase("put")) {
+        if (!exchange.getRequestMethod().equalsIgnoreCase("post")) {
             exchange.close();
             return;
         }
@@ -100,7 +100,7 @@ public class WebServer {
             return;
         }
 
-        String responseMessage = "Server is alive and kicking";
+        String responseMessage = "Server is alive and kicking\n";
         sendResponse(responseMessage.getBytes(), exchange);
 
     }
